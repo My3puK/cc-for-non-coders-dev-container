@@ -1,426 +1,218 @@
-# Anti-Patterns Reference
+# English-to-Russian Translation Anti-Patterns
 
-## Translate Meaning, Not Words
+Use this reference to diagnose a draft that sounds literal, repetitive, or machine-translated.
+Apply each correction only when it preserves the source meaning and register.
 
-| Bad (calque) | Good (natural Russian) |
-|--------------|----------------------|
-| Это имеет смысл | Логично / Понятно / Разумно |
-| Я имею проблему | У меня проблема / Столкнулся с проблемой |
-| Убедитесь, что вы понимаете | Важно понимать / Обратите внимание |
-| В конце дня | В итоге / В конечном счёте |
-| Иметь место | Происходить / Случаться |
-| Принимая во внимание | Учитывая / С учётом |
-| На основании вышеизложенного | Поэтому / Исходя из этого |
+## Contents
+
+- [Calques](#calques)
+- [Machine-writing markers](#machine-writing-markers)
+- [False friends](#false-friends)
+- [Technical prose](#technical-prose)
+- [Grammar and structure](#grammar-and-structure)
+- [Repetition](#repetition)
+- [Lists](#lists)
+- [Register](#register)
+- [Exam questions](#exam-questions)
+- [Final audit](#final-audit)
+
+## Calques
+
+| Literal wording | Natural options, depending on context |
+|---|---|
+| Это имеет смысл. | Это логично. / Понятно. / Разумно. |
+| Я имею проблему. | У меня проблема. / Я столкнулся с проблемой. |
+| В конце дня... | В итоге... / К концу дня... when the literal day is meant. |
+| Иметь место | Происходить / встречаться / быть, according to meaning. |
 | Оказывать влияние | Влиять |
-| Находиться в процессе | Сейчас [делаем] |
-| Играть важную роль | Важен для / Во многом определяет |
-| Иметь возможность | Мочь / Можно |
-| Сфокусироваться на | Сосредоточиться на |
-| Быть вовлечённым в | Участвовать в |
-| Нести ответственность за | Отвечать за |
-| Низкий порог входа | Легко начать / Просто освоить |
-| Вывести на новый уровень | Улучшить / Усилить / Сделать лучше |
-| Получить максимум от | Использовать на полную / Извлечь пользу |
+| Находиться в процессе настройки | Настраиваться / сейчас настраиваем |
+| Иметь возможность | Мочь / можно |
+| Быть вовлечённым | Участвовать, if participation is meant. |
+| Нести ответственность за | Отвечать за, unless legal wording requires the fuller form. |
+| Получить максимум от | Использовать на полную / извлечь пользу |
+| Низкий порог входа | Легко начать / легко освоить, unless the term is established for the audience. |
 
-## AI Translation Markers (ChatGPT-isms)
+Do not replace a phrase mechanically. `At the end of the day` may literally refer to a time, and
+`responsible for` may require a formal legal equivalent.
 
-These words appear frequently in machine-translated text. Avoid them unless they are the only precise term.
+## Machine-writing markers
 
-| AI Marker | Bad Russian Translation | Good Natural Replacement |
-|-----------|-------------------------|--------------------------|
-| **Delve** | Погружаться / Углубляться | Изучить / Разобраться / Подробнее о... |
-| **Landscape** (abstract) | Ландшафт (киберугроз) | Ситуация / Обстановка / Сфера |
-| **Tapestry** | Гобелен / Полотно | Разнообразие / Сочетание / Картина |
-| **Testament** | Свидетельство / Подтверждение | Доказывает / Говорит о том, что... |
-| **Underscore** | Подчеркивать | Показывает / Выделяет / Напоминает |
-| **Pivotal** | Поворотный / Ключевой | Важный / Решающий |
-| **Vibrant** | Вибраций / Яркий | Активный / Живой / (опишите фактами) |
-| **Foster** | Воспитывать / Способствовать | Развивать / Создавать условия / Поддерживать |
-| **Realm** | Царство / Область | Сфера / Мир / (контекст) |
-| **Crucial** | Критический / Решающий | Важный / Главный |
-| **Elevate** | Возвышать / Поднимать | Улучшать / Развивать |
-| **Unleash** | Высвободить / Развязать | Раскрыть / Использовать |
-| **Harness** | Обуздать | Использовать / Задействовать |
-| **Navigating** (abstract) | Навигация по (миру) | Ориентироваться / Разбираться |
-| **Showcase** | Демонстрировать | Показывать / Представлять |
-| **Serve as** | Служить чем-то | Быть / (опустить) |
+Watch for frequent but context-poor equivalents:
 
-## IT-Specific Calques
+| English | Risky default | Better contextual choices |
+|---|---|---|
+| delve | погрузиться | изучить / разобраться / рассмотреть подробнее |
+| landscape | ландшафт | ситуация / среда / сфера / рынок |
+| tapestry | гобелен / полотно | сочетание / разнообразие / картина |
+| testament | свидетельство | показывает / подтверждает, if the evidence supports it |
+| underscore | подчёркивать | показывать / выделять / напоминать |
+| pivotal | поворотный | важный / решающий |
+| foster | способствовать | развивать / поддерживать / создавать условия |
+| harness | обуздать | использовать / задействовать |
+| navigate an abstract field | навигировать | ориентироваться / разбираться |
+| serve as | служить чем-либо | быть / использоваться как |
 
-These are particularly common in technical documentation translation. The English term has a "default" Russian translation that is technically possible but unnatural in context.
+These words are not forbidden. Use the precise equivalent when the literal image or established
+term is intentional.
 
-| English | Bad calque | Good Russian | Notes |
-|---------|-----------|--------------|-------|
-| Distribution (of software/plugins) | Распространение | Публикация / Размещение / Развёртывание | «Распространение» тянет в сторону эпидемиологии. Для публикации в каталог — «публикация»; для доставки на серверы — «развёртывание» |
-| Frontmatter (YAML) | YAML-преамбула | YAML-шапка / Блок метаданных / YAML-заголовок | «Преамбула» — юридический термин (Конституция). В IT: «шапка» или «блок метаданных» |
-| Composability | Компонуемость | Модульность / Сочетаемость | «Компонуемость» тяжеловесно и редко. В контексте навыков: «сочетаемость с другими навыками» |
-| Two ways through this guide | Два пути через это руководство | Как работать с руководством: два сценария | Калька предлога through. По-русски мы не ходим «сквозь» руководство |
-| Whether you build... or... | Строите ли вы... или... | Не важно, делаете вы... или... | Калька whether. Русский вариант: «Не важно, ...» или «Независимо от того, ...» |
-| Control over management and execution | Контроль над управлением и выполнением | Позволяет управлять и запускать | Тройная номинализация. Разворачивайте в глаголы |
-| Packaged into a folder | Упакованный в папку | Оформленный в виде папки / Собранный в папке | «Упакованный» калькирует packaged; для русского уха естественнее «оформленный», «собранный» |
-| Focus on chapters... and categories 1–2 | Сосредоточьтесь на главах... и категориях 1–2 | Читайте главы...; ориентируйтесь на категории 1–2 | Разные типы сущностей нельзя ставить в один ряд без пояснения |
-| Progressive disclosure | Прогрессивное раскрытие | Постепенная подача / Поэтапное раскрытие | «Прогрессивное» в русском тянет в сторону «прогрессивный = передовой» |
-| A layer of knowledge on top of | Слой знаний поверх | Дополнительные инструкции к / Слой знаний над | Калька on top of. Перестроить фразу |
+## False friends
 
-## Stop Words & Evaluations (Informational Style)
+The previous version contained a broad false-friends list. Retain the entries below because they
+are common and semantically stable, but choose the final wording by context.
 
-Eliminate these specific markers of weak text.
+| English | Risky automatic choice | Contextual Russian equivalents |
+|---|---|---|
+| accurate | аккуратный | точный / достоверный; «аккуратный» only when neatness or careful execution is meant |
+| actual | актуальный | фактический / реальный / действительный; «актуальный» only when current relevance is meant |
+| realize | реализовать | понять / осознать; «реализовать» when implementing or making something real |
+| control | контролировать | управлять / регулировать / контролировать, according to the relationship |
+| originally | оригинально | изначально / первоначально; «оригинально» when creatively or unusually is meant |
+| prospect | проспект | перспектива / потенциальный клиент / предполагаемый результат, according to context |
+| sympathetic | симпатичный | сочувствующий / понимающий / благожелательный |
+| data | дата | данные |
+| fabric | фабрика | ткань / материал / структура, according to context |
+| magazine | магазин | журнал; «магазин» only when a technical storage or feed device is meant |
+| decade | декада | десятилетие; «декада» only for a ten-day period or an established specialist term |
+| revision | ревизия | редакция / версия / пересмотр / доработка; «ревизия» for an inspection or audit |
+| technique | техника | метод / приём / способ; «техника» when equipment, skill, or execution technique is meant |
+| record | рекорд | запись / документ / показатель / учётная запись; «рекорд» for the best result |
 
-### Introductory Trash (Вводный мусор)
-Delete these phrases. They add zero meaning.
+Do not treat the middle column as a ban. A false friend becomes correct when the context genuinely
+has that meaning.
 
-| Trash | Fix |
-|-------|-----|
-| Как известно, ... | [Just say the fact] |
-| Не секрет, что ... | [Just say the fact] |
-| Допустим, ... | [Start the example directly] |
-| В общем, ... | [Delete] |
-| Честно говоря, ... | [Delete] |
-| На мой взгляд, ... | [Delete] |
-| Стоит отметить, что ... | [Delete or rephrase] |
-| Важно подчеркнуть, что ... | [Delete or rephrase] |
-| Кстати, ... | [Delete] |
-| Более того, ... | [Delete or "К тому же"] |
-| Дополнительно, ... | [Delete or "Ещё"] |
-| В заключение, ... | [Delete or "Итог"] |
+## Technical prose
 
-### Empty Evaluations (Пустые оценки)
-Subjective adjectives without proof. Replace with facts.
+Common failures include:
 
-| Empty Evaluation | Fact-based Replacement (Example) |
-|------------------|----------------------------------|
-| Качественный | Сделан из стали / Работает 10 лет |
-| Эффективный | Экономит 20% времени / Окупается за месяц |
-| Уникальный | Единственный в своём роде / Другого такого нет |
-| Легендарный | Известный с 1990 года |
-| Вкусный | Сладкий / Сочный / Хрустящий |
-| Удобный | Помещается в карман / Кнопка под большим пальцем |
-| Профессиональный | Опытный (10 лет стажа) / Специализированный |
-| Успешный | Прибыльный / Популярный |
-| Широкий спектр | 50 видов / Всё от А до Я |
-| Богатый (опыт/история) | 20 лет опыта / Многогранный |
-| Захватывающий | [Describe why it's exciting] |
+- translating official identifiers or code;
+- copying English noun stacks into Russian;
+- using several Russian terms for one technical concept;
+- preserving English syntax after translating every word;
+- replacing a precise technical term with a vague everyday word;
+- applying one translation to every sense of an English word.
 
-### Indefinite Weasel Words (Неопределенные)
-| Indefinite | Specific |
-|------------|----------|
-| Более 100 | 100+ / 100 / 120 |
-| Около 5 | 5 |
-| Порядка 1000 | 1000 |
-| Различные | [List them] |
-| Некоторые | [Name them] |
+Examples:
 
-## Prefer Verbs Over Nouns
+| English | Avoid | Prefer |
+|---|---|---|
+| control skill management and execution | контроль над управлением и выполнением навыков | управлять навыками и запускать их |
+| YAML frontmatter | YAML-преамбула | YAML-шапка / блок YAML-метаданных |
+| packaged into a folder | упакованный в папку | собранный в папке / папка с... |
+| two ways through this guide | два пути через руководство | два способа работать с руководством |
+| progressive disclosure | прогрессивное раскрытие | постепенная подача / поэтапное раскрытие |
 
-Russian loves verbs. English loves nouns. Always convert back.
+Use [glossary-strategy.md](glossary-strategy.md) for canonical software terms. Do not create a
+different local term merely for stylistic variety.
 
-| Bad (nominalization) | Good (verb form) |
-|----------------------|-----------------|
-| Осуществление внедрения | Мы внедрили / Внедряем |
-| Проведение анализа | Мы проанализировали / Анализируем |
-| Обеспечение выполнения | Обеспечить / Сделать так, чтобы |
-| Произведение оплаты | Оплатить |
-| Принятие решения | Решить |
-| Оказание содействия | Помочь |
-| Предоставление доступа | Дать доступ / Открыть доступ |
-| Осуществление контроля | Контролировать / Следить |
-| API обеспечивает прямой контроль над управлением и выполнением навыков | Через API вы напрямую управляете навыками и запускаете их |
-| Контроль версий и управление через Claude Console | Управляйте версиями в Claude Console |
+## Grammar and structure
 
-## Active Voice Over Passive
+### Noun stacks
 
-| Bad (passive) | Good (active) |
-|---------------|--------------|
-| Было принято решение | Мы решили / Решили |
-| Ошибка была допущена | Произошла ошибка / Допустили ошибку |
-| Данные были получены | Мы получили данные / Данные поступили |
-| Функция была добавлена | Мы добавили функцию / Появилась функция |
-| Работа была выполнена | Мы сделали / Работа завершена |
+Turn hidden actions into verbs when it improves clarity:
 
-## Kill Redundant Pronouns
+- «осуществление внедрения» → «внедрение» or «внедрить»;
+- «проведение анализа» → «анализ» or «проанализировать»;
+- «предоставление доступа» → «дать доступ»;
+- «обеспечение выполнения требования» → «обеспечить соблюдение требования» or a more direct verb.
 
-Russian drops pronouns where English cannot. This is one of the strongest calque markers.
+Do not force a verb if the noun names a defined process, UI element, legal concept, or technical
+artifact.
 
-| Bad (over-pronouned) | Good (clean) |
-|----------------------|-------------|
-| Вы можете использовать вашу учётную запись для входа в ваш личный кабинет | Используйте учётную запись для входа в личный кабинет |
-| Мы рады сообщить вам, что ваш заказ был отправлен | Рады сообщить: заказ отправлен |
-| Когда вы завершите вашу регистрацию, вы получите ваш пароль | После регистрации придёт пароль |
-| Настроить Claude под свои нужды... объяснить свои предпочтения... в стиле вашей команды | Настроить Claude под себя... объяснить предпочтения... в стиле команды |
-| Ваш навык должен работать рядом с другими | Навык должен работать корректно рядом с другими |
+### Passive voice
 
-**Rule of thumb:** if removing «ваш/свой» does not create ambiguity, remove it.
+Avoid passive voice when it hides a relevant actor or follows English syntax mechanically. Keep it
+when the actor is unknown, irrelevant, or intentionally backgrounded.
 
-## Replace "Является" with Em Dash
+- Heavy: «Решение было принято командой» → «Команда решила».
+- Valid state: «Доступ запрещён политикой организации».
+- Unknown actor: «Файл был удалён до начала проверки».
 
-| Bad | Good |
-|-----|------|
-| Данный инструмент является мощным решением | Этот инструмент — мощное решение |
-| Компания является лидером рынка | Компания — лидер рынка |
-| Это является важным шагом | Это важный шаг |
+### Pronouns
 
-## Sentence Structure: Break and Rebuild
+Drop English possessive pronouns when Russian context already makes ownership clear, but preserve
+them when they distinguish people, accounts, teams, or data.
 
-English packs meaning into long sentences with subordinate clauses. Russian prefers shorter, clearer sentences.
+## Repetition
+
+Repeated sentence openings, transitions, or empty templates may make a draft mechanical. Vary or
+merge them only if the change preserves emphasis and structure.
+
+Do not apply a numeric ban such as “never repeat a word twice within 15 words.” Repetition is often
+necessary for:
+
+- technical terminology;
+- legal precision;
+- parallel instructions;
+- deliberate rhetoric;
+- avoiding an ambiguous pronoun.
+
+Treat repetition as a prompt to inspect, not an instruction to replace. Vary surrounding syntax
+before replacing a canonical term.
+
+## Lists
+
+Check that items have compatible grammatical roles and answer the lead-in correctly.
+
+Bad:
+
+```text
+Чему вы научитесь:
+- Технические требования
+- Использовать шаблоны
+```
+
+Good:
+
+```text
+Чему вы научитесь:
+- понимать технические требования;
+- использовать шаблоны.
+```
+
+Do not force every list item to start with a verb. Noun lists, values, labels, and factual answer
+options should remain nouns or values when that matches the source. Follow the format-sensitive
+punctuation rules in [typography.md](typography.md).
+
+## Register
+
+Do not replace every anglicism automatically. Decide whether it is:
+
+- an avoidable borrowing: «таск» → «задача» in neutral documentation;
+- an established general term: «стартап», «маркетинг», «дизайн»;
+- a professional term appropriate to the audience: «CI/CD-пайплайн»;
+- code, an identifier, or an official label that must remain unchanged;
+- deliberate slang in an informal source whose tone should be preserved.
+
+Avoid bureaucratese that the source does not require: «данный», «в целях», «на сегодняшний день»,
+«осуществлять», and chains of nominalizations. Preserve formal wording when it carries legal,
+regulatory, or contractual force.
+
+## Exam questions
+
+Avoid:
+
+- a question that depends on omitted context;
+- losing `should`, `must`, `may`, or another modal distinction;
+- rewriting distractors so aggressively that the correct answer becomes obvious;
+- forcing action verbs onto answers that are values, terms, or factual statements;
+- leaking source filenames, internal numbering, or editorial notes into exam content;
+- translating enum values, fields, or API identifiers;
+- changing the degree of certainty in the explanation.
 
 Example:
 
-English: "The company, which was founded in 2015 by a team of engineers who previously worked at Google, has recently announced a new product that aims to revolutionize the way people interact with AI."
+- Incomplete: «Что следует добавить?»
+- Self-contained: «Что следует добавить в схему, чтобы сохранить исходное значение `severity`?»
 
-Bad Russian: "Компания, которая была основана в 2015 году командой инженеров, которые ранее работали в Google, недавно анонсировала новый продукт, который призван революционизировать то, как люди взаимодействуют с ИИ."
+Add context only when it is available elsewhere in the source item. Do not invent missing facts to
+make a question self-contained; flag a materially incomplete source instead.
 
-Good Russian: "Компанию в 2015 году основали бывшие инженеры Google. Недавно она представила продукт, который должен изменить наше взаимодействие с ИИ."
+## Final audit
 
-Key problems in bad version: three nested "который" clauses, passive "была основана", calque "революционизировать то, как".
+Before accepting a stylistic correction, verify:
 
-### Heavy Compound Definitions
-
-| Bad | Good |
-|-----|------|
-| Навык — это набор инструкций, упакованный в обычную папку, который учит Claude... | Навык — это обычная папка с набором инструкций, обучающих Claude... |
-| Вместо того чтобы каждый раз заново объяснять... | Чтобы не объяснять каждый раз заново... |
-| В этом руководстве — всё, что нужно для создания... | Здесь собрано всё, что нужно для создания... |
-
-## Monotonous Repetition
-
-This is one of the strongest markers of machine translation. A human author naturally varies vocabulary, sentence openers, and structural patterns. A machine tends to find one working template and repeat it.
-
-### Repeated subheadings
-
-Bad — same pattern 10 times in a row:
-
-```
-Ключевые приёмы:
-...
-Ключевые приёмы:
-...
-Ключевые приёмы:
-```
-
-Good — vary naturally:
-
-```
-На что обратить внимание:
-...
-Важно учесть:
-...
-Здесь помогают:
-...
-Что делает этот подход эффективным:
-```
-
-Or better yet: weave the points into the prose instead of repeating a subheading template.
-
-### Repeated sentence openers
-
-Bad:
-
-```
-Это позволяет...
-Это обеспечивает...
-Это даёт возможность...
-```
-
-Good:
-
-```
-Это позволяет...
-Благодаря этому...
-В результате...
-Пользователь получает...
-```
-
-### Repeated transition phrases
-
-Bad — every section starts with "Давайте рассмотрим":
-
-```
-Давайте рассмотрим первый вариант.
-Давайте рассмотрим второй вариант.
-Давайте рассмотрим третий вариант.
-```
-
-Good:
-
-```
-Начнём с первого варианта.
-Второй вариант устроен иначе.
-Третий подход отличается тем, что...
-```
-
-### Rule of thumb
-
-If any construction appears more than 3 times in close proximity, vary it. A real author would do so instinctively.
-
-## List Parallelism
-
-This is one of the most common problems in translated technical documentation. Every list must be grammatically consistent.
-
-### Rule: heading determines grammar
-
-If the heading asks a question with a verb, list items must match:
-
-| Heading type | Expected item form | Example |
-|-------------|-------------------|---------|
-| «Чему вы научитесь:» | Verbs (infinitives) | Понимать...; Применять...; Тестировать... |
-| «В этом разделе:» | Noun phrases | Технические требования...; Шаблоны...; Подходы... |
-| «Содержание» | Noun phrases | Основы; Публикация; Совместимость |
-| «Что нужно сделать:» | Verbs (imperative or infinitive) | Проверить...; Сравнить...; Убедиться... |
-
-### Bad: mixed grammar
-
-```
-Чему вы научитесь:
-- Технические требования... (noun)
-- Шаблоны для автономных навыков... (noun)
-- Подходы, которые... (noun)
-- Тестирование... (noun)
-```
-
-### Good: Option A (verbs)
-
-```
-Чему вы научитесь:
-- понимать технические требования;
-- использовать шаблоны для автономных навыков;
-- применять подходы, которые...;
-- тестировать и дорабатывать навыки.
-```
-
-### Good: Option B (change heading)
-
-```
-В этом разделе:
-- Технические требования...
-- Шаблоны для автономных навыков...
-```
-
-### Mixed depth anti-pattern
-
-Do not mix complete sentences and noun phrases in the same list:
-
-Bad:
-```
-- Готовые рабочие процессы запускаются автоматически.
-- Стабильное и надёжное использование инструментов.
-```
-
-Good:
-```
-- Готовые рабочие процессы запускаются автоматически.
-- Инструменты работают стабильно и надёжно.
-```
-
-## Anglicisms
-
-Use Russian equivalents when natural alternatives exist.
-
-| Anglicism | Russian equivalent |
-|-----------|--------------------|
-| фидбэк | обратная связь, отзыв |
-| митинг | встреча, совещание |
-| дедлайн | срок, крайний срок |
-| таск | задача |
-| апдейт | обновление |
-| контент | содержимое, материалы |
-| ивент | мероприятие, событие |
-| скилл | навык, умение |
-| инсайт | вывод, наблюдение, открытие |
-| челлендж | вызов, задача, трудность |
-| воркфлоу | рабочий процесс |
-| юзер | пользователь |
-| кейс | случай, пример, ситуация |
-| бэкграунд | опыт, подготовка, контекст |
-| фича | функция, возможность |
-| имплементация | внедрение, реализация |
-| аутпут | результат, выход |
-| паттерн | шаблон, закономерность |
-| референс | ссылка, пример, ориентир |
-| лэндинг | посадочная страница |
-| коллаборация | сотрудничество, совместная работа |
-| пайплайн | конвейер, цепочка |
-| перформанс | производительность, быстродействие |
-| фреймворк | каркас, платформа, среда |
-| тулинг | инструментарий, инструменты |
-| позиционирование (продукта) | как подать, как описать, как представить |
-| трансформировать | изменить, перестроить, преобразовать |
-| оптимизировать (в нетехн. контексте) | улучшить, упростить, ускорить |
-| левериджить / использовать леверидж | использовать, задействовать, опереться на |
-| масштабировать (в нетехн. контексте) | расширить, увеличить |
-
-Exceptions — preserve established terms without adequate replacement: стартап, маркетинг, бренд, онлайн, интернет, блог, дизайн. Also preserve technical terms in technical context: API, Docker, workflow (in IT texts), SDK, CLI.
-
-## False Friends
-
-| English | Not (false friend) | Correct Russian |
-|---------|-------------------|-----------------|
-| accurate | аккуратный | точный |
-| actual | актуальный | фактический, реальный |
-| realize | реализовать | понять, осознать |
-| control (manage) | контролировать | управлять, регулировать |
-| originally | оригинально | изначально, первоначально |
-| prospect | проспект | перспектива, возможность |
-| pretend | претендовать | притворяться |
-| sympathetic | симпатичный | сочувствующий |
-| data | дата | данные |
-| fabric | фабрика | ткань |
-| magazine | магазин | журнал |
-| complexion | комплекция | цвет лица |
-| intelligence | интеллигенция | разведка / ум |
-| baton | батон | дирижёрская палочка / жезл |
-| decade | декада | десятилетие |
-| revision | ревизия | пересмотр, доработка |
-| compositor | композитор | наборщик |
-| technique | техника (оборудование) | метод, приём, способ |
-| obligation | облигация | обязательство |
-| record | рекорд | запись, документ |
-| distribution | дистрибуция (всегда) | публикация / размещение / развёртывание (зависит от контекста) |
-
-## Bureaucratese to Eliminate
-
-| Avoid | Use instead |
-|-------|-------------|
-| осуществлять | делать, выполнять, проводить |
-| производить (действие) | делать, выполнять |
-| обеспечивать (X контроль/доступ) | позволять, давать, открывать |
-| в рамках | в пределах, при, во время |
-| на сегодняшний день | сейчас, сегодня |
-| в настоящее время | сейчас |
-| данный | этот |
-| вышеуказанный | этот, упомянутый |
-| нижеследующий | следующий |
-| каковой | который |
-| надлежащий | нужный, правильный |
-| в целях | чтобы, для |
-| в связи с тем, что | потому что, так как |
-| в соответствии с | по, согласно |
-| по причине того, что | потому что, из-за того что |
-| в случае если | если |
-
-## Redundancy to Eliminate
-
-| Redundant | Concise |
-|-----------|---------|
-| своя собственная | своя / собственная |
-| полностью и целиком | полностью / целиком |
-| каждый и любой | каждый / любой |
-| впервые познакомиться | познакомиться |
-| совместное сотрудничество | сотрудничество |
-| перспектива на будущее | перспектива |
-| главный приоритет | приоритет |
-| на данный момент времени | сейчас |
-
-## Awkward but Common Constructions
-
-These are not exact calques, but constructions that sound slightly off to a native ear. They often appear in otherwise decent translations.
-
-| Awkward | Natural |
-|---------|---------|
-| Порог входа ниже | Проще начать / Легче освоить |
-| Это является плюсом | Это плюс / Это преимущество |
-| Данный подход позволяет | Так можно / Благодаря этому |
-| Стоит отметить, что | [just state the fact directly] |
-| Важно понимать, что | [just state the fact directly] |
-| Необходимо учитывать тот факт, что | Учтите, что / Имейте в виду |
-| Начинаем. | Приступим. / Поехали. / [omit entirely] |
-| Начните с пользовательских сценариев | Определите сценарии / Сначала опишите сценарии |
+1. The new wording makes the same claim.
+2. Certainty, modality, range, and scope are unchanged.
+3. No evidence, benefit, actor, or consequence was added.
+4. A canonical technical term was not replaced by a decorative synonym.
+5. The result matches the target audience rather than a universal notion of “good Russian.”
