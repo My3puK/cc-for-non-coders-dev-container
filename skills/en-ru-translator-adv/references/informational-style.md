@@ -1,78 +1,83 @@
-# Informational Style (Инфостиль) Guide for Translators
+# Informational Style for Translation
 
-Based on Maxim Ilyahov's "Write, Cut" (Пиши, сокращай) and WikiProject AI Cleanup "Signs of AI writing".
+Use informational style to make Russian prose clear and useful. Treat it as an editing method,
+not permission to rewrite facts or the author's position.
 
-## Core Principle
+## Fidelity boundary
 
-The goal is **clarity**, **usefulness**, and **human voice**. The text must be honest, objective, and respectful of the reader's time. Avoid "soulless" writing that sounds robotic or algorithmic.
+Never remove or alter:
 
-## 1. Stop Words (Стоп-слова) & AI Fillers
+- facts, claims, evidence, examples, and comparisons;
+- numbers, ranges, uncertainty, limits, and frequency;
+- conditions, exceptions, negation, modality, and warnings;
+- deliberate evaluation, emotion, repetition, or brand voice;
+- legal, regulatory, contractual, or technical distinctions.
 
-Delete these unless they are absolutely necessary for meaning.
+For example, translate `more than 100` as «более 100», `about five` as «около пяти», `at least
+three` as «не менее трёх», and `may fail` as «может завершиться с ошибкой». Do not make these
+statements more exact or certain.
 
-### Introductory Words (Вводные)
-Trash phrases that add no meaning:
-- **Trash:** Как известно, не секрет, допустим, в общем, честно говоря, на мой взгляд, стоит отметить, важно подчеркнуть.
-- **AI Fillers:** Более того (Moreover), К тому же (Furthermore), В заключение (In conclusion), В целом (Overall).
-- **Fix:** Just say the sentence. "Как известно, Земля круглая" → "Земля круглая".
+## Remove only empty framing
 
-### Evaluations (Оценки)
-Subjective adjectives without proof. "Show, don't tell."
-- **Trash:** Качественный, эффективный, уникальный, легендарный, вкусный, удобный, профессиональный, успешный, захватывающий, богатый (опыт).
-- **Fix:** Replace with facts.
-  - "Быстрый сервис" → "Доставка за 20 минут".
-  - "Удобный интерфейс" → "Кнопка «Купить» всегда под рукой".
-  - "Команда профессионалов" → "Работаем 10 лет, сделали 50 проектов".
+Delete or shorten a phrase only after confirming that it adds no meaning, stance, transition, or
+rhythm needed in context.
 
-### Cliches (Штампы)
-Overused metaphors and journalistic phrases.
-- **Trash:** В кратчайшие сроки, на сегодняшний день, ни для кого не секрет, индивидуальный подход, широкий спектр услуг, динамично развивающаяся компания.
-- **Fix:**
-  - "В кратчайшие сроки" → "Быстро" или "За 2 дня".
-  - "На сегодняшний день" → "Сегодня" или "Сейчас".
+| Literal or heavy | Possible concise form |
+|---|---|
+| Как известно, Земля круглая. | Земля круглая. |
+| В целях повышения скорости... | Чтобы ускорить... |
+| Осуществлять проверку | Проверять |
+| В настоящее время сервис недоступен. | Сейчас сервис недоступен. |
+| В случае если запрос завершится ошибкой... | Если запрос завершится ошибкой... |
 
-### Indefinite Words (Неопределенные)
-- **Trash:** Более 100, около 5, порядка 1000, некоторые, различные.
-- **Fix:** Use exact numbers or rounded numbers without "about/over" if the precision doesn't matter. "Более 10 000 клиентов" → "10 000 клиентов".
+Do not delete `moreover`, `however`, `in conclusion`, or similar transitions automatically. Keep
+or adapt them when they express a real logical relationship or help navigation.
 
-## 2. Syntax & Action
+## Evaluations
 
-### Verbal Nouns (Отглагольные существительные)
-Nouns that hide action. They often require a helper verb ("осуществлять", "производить").
-- **Bad:** Осуществлять продажу, производить ремонт, оказывать поддержку, обеспечивать безопасность.
-- **Good:** Продавать, ремонтировать, помогать, защищать.
-- *Rule:* Find the hidden action and make it the main verb.
+Do not automatically remove words such as `effective`, `critical`, `unique`, or `convenient`.
 
-### Passive Voice (Страдательный залог)
-Subject is acted upon. Hides the agent.
-- **Bad:** Решение было принято нами. Работа выполняется мастером. Оплата производится в кассе.
-- **Good:** Мы решили. Мастер работает. Платите в кассе.
-- *Exception:* Use passive if the agent is unknown or irrelevant, or to describe a state ("Магазин открыт", "Дом построен").
+- Preserve the evaluation when it expresses the author's claim, tone, severity, or a defined term.
+- Replace it with evidence only when the source itself supplies that evidence.
+- Do not invent evidence to justify an adjective.
+- In marketing copy, preserve claim strength without strengthening or weakening it.
 
-### Participles (Причастия) & Gerunds (Деепричастия)
-Heavy structures that clutter the text.
-- **Bad:** Человек, читающий книгу (Participle). Прочитав книгу, он пошел спать (Gerund).
-- **Good:** Человек читает книгу. Он прочитал книгу и пошел спать.
+Example: `an effective method` may be «эффективный метод» if effectiveness is the author's actual
+claim. If the source says `cuts processing time by 20%`, prefer the supplied fact: «сокращает время
+обработки на 20 %».
 
-## 3. Bureaucratese (Канцелярит)
-Official-sounding words used to seem "important."
-- **Avoid:** Данный, настоящий (in contracts), является, представляет собой, осуществляется, в целях, в связи с, во избежание, служит доказательством (serves as a testament).
-- **Fix:**
-  - "Данный прибор" → "Этот прибор" или просто "Прибор".
-  - "Является важным" → "Важно".
-  - "В целях повышения" → "Чтобы повысить".
-  - "В связи с ремонтом" → "Из-за ремонта".
+## Syntax
 
-## 4. Structure & Formatting
+Prefer a direct verb when a noun construction is needlessly heavy:
 
-- **One thought per sentence.** If a sentence is overloaded, split it.
-- **Headings.** Use informative headings. Not "About us", but "How we help".
-- **Lists.** Use parallel structure. If point 1 is a verb, point 2 must be a verb.
-- **No "Parcelling" (Парцелляция).** Don't break sentences unnaturally for "effect" unless strictly necessary. Keep natural flow.
-- **No Em Dash Abuse.** Don't copy English em dashes for every pause. Use standard Russian punctuation.
+- `perform validation` → «проверить» or «выполнить валидацию», depending on the domain;
+- `provide access` → «дать доступ»;
+- `make a decision` → «решить»;
+- `conduct an analysis` → «проанализировать».
 
-## 5. "Native Speaker" Check
+Passive voice, participles, and gerunds are valid Russian constructions. Keep or use them when:
 
-- Read the text aloud. If you stumble or run out of breath, simplify.
-- Russian syntax is flexible but logic is rigid. Ensure the "Theme-Rheme" (Topic-Comment) progression is logical.
-- **Avoid Soulless Writing:** If the text sounds like a press release or a neutral report ("The experiment produced results"), add a human pulse ("The results were unexpected").
+- the agent is unknown, irrelevant, or intentionally backgrounded;
+- the result or state matters more than the actor;
+- the construction is conventional in the target genre;
+- an active rewrite would add an invented actor or distort emphasis.
+
+Rewrite them only when they obscure agency, create ambiguity, or make the sentence unnecessarily
+heavy.
+
+## Human voice without invention
+
+Vary sentence length and structure when the draft sounds mechanical, but do not add a «human
+pulse» by inventing reactions, judgments, or consequences. Naturalness comes from Russian syntax,
+accurate word choice, and appropriate rhythm—not from new content.
+
+## Final questions
+
+Before accepting an edit, ask:
+
+1. Did the source actually say this?
+2. Did the edit change certainty, scope, tone, or responsibility?
+3. Is the shorter version equally precise?
+4. Would this wording be natural for the intended Russian audience?
+
+Reject the edit if it improves style at the expense of any earlier priority.
