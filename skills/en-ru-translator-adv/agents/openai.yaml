@@ -1,0 +1,4 @@
+interface:
+  display_name: "Продвинутый перевод EN→RU"
+  short_description: "Точный и естественный перевод с английского"
+  default_prompt: "Используй $en-ru-translator-adv, чтобы точно и естественно перевести этот текст на русский."
