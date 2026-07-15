@@ -1,274 +1,120 @@
-# Russian Typography Rules
+# Russian Typography
 
-## Quotation Marks
+Apply these conventions unless the user, publisher, product style guide, or file format specifies
+another standard. Preserve functional source formatting and never change code to satisfy prose
+typography.
 
-Primary: guillemets «ёлочки». Nested: German-style „лапки".
+## Contents
 
-Correct: He said: "This is important" translates to: Он сказал: «Это важно».
+- [Quotation marks](#quotation-marks)
+- [Dashes and hyphens](#dashes-and-hyphens)
+- [Lists](#lists)
+- [Numbers, uncertainty, and units](#numbers-uncertainty-and-units)
+- [Dates](#dates)
+- [Abbreviations and spaces](#abbreviations-and-spaces)
+- [Mixed-language text](#mixed-language-text)
+- [The letter «ё»](#the-letter-ё)
 
-For nested quotes: «Он сказал: „Это важно"».
+## Quotation marks
 
-Use Russian quotation marks in all Russian text. Never use English double quotes ("...") or straight quotes ("...").
+Use Russian guillemets for primary quotations and German quotation marks for nested quotations:
 
-### Quotation marks around English text within Russian
+- `«Основная цитата»`;
+- `«Он сказал: „Это важно“»`.
 
-When an English phrase is kept in Latin script inside a Russian sentence, wrap it in «ёлочки», not English quotes:
+Use the same marks around an English phrase quoted in Russian prose: `Система вернула сообщение
+«Access denied»`. Keep straight quotes inside code and wherever syntax requires them.
 
-| Bad | Good |
-|-----|------|
-| Спросите Claude: "When would you use this?" | Спросите Claude: «When would you use this?» |
-| Документ называется "Skills API Quickstart" | Документ называется «Skills API Quickstart» |
+## Dashes and hyphens
 
-Exception: inside code blocks and inline `code`, use straight quotes as required by the programming language.
+- Hyphen `-`: compound words and particles—`кто-то`, `из-за`.
+- En dash `–`: closed ranges—`10–15 минут`, `2024–2026 годы`.
+- Em dash `—`: Russian sentence punctuation and definitions—`Codex — продукт OpenAI`.
 
-## Dashes: Three Types
+Do not replace Unicode dashes with `--`. Do not convert a minus sign, command flag, file name, or
+identifier into a typographic dash.
 
-Russian uses three distinct characters. Never confuse them.
+## Lists
 
-**Hyphen (-, дефис):** compound words and particles only.
-Examples: кто-то, из-за, по-русски, всё-таки, как-нибудь.
+Keep grammar and punctuation consistent within one list. Choose the system according to the
+document type rather than enforcing book punctuation everywhere.
 
-**En dash (–, короткое тире):** numeric ranges, without spaces.
-Examples: 10–15 минут, 2020–2025, стр. 40–45, понедельник–пятница.
+### Complete sentences
 
-**Em dash (—, длинное тире):** everything else. Always with spaces on both sides.
-Examples:
-- Definitions: Автоматизация — ключ к эффективности.
-- Parenthetical: Навыки — один из самых мощных способов — позволяют настроить Claude.
-- Subject–predicate replacement: Компания — лидер рынка.
-- Before clauses: Мы завершили сделку — это позволит расширить линейку.
+Start with a capital letter and normally end every item with a period:
 
-CRITICAL: always use proper Unicode characters in translation output.
-- Em dash: — (U+2014), not double hyphen (--)
-- En dash: – (U+2013), not single hyphen (-)
-- Never use double hyphen (--) as a substitute for any type of dash.
-
-### Dashes in numeric ranges — consistency
-
-All ranges in a document must use the same format. Choose en dash without spaces:
-
-| Bad | Good |
-|-----|------|
-| 15-30 минут | 15–30 минут |
-| 1-500 символов | 1–500 символов |
-| 2-3 сценария | 2–3 сценария |
-| страницы 10 - 20 | страницы 10–20 |
-
-## Lists and Enumerations
-
-Rules based on Полный академический справочник under В. В. Лопатин and А. Э. Мильчин's Справочник издателя и автора.
-
-### Core principle
-
-The marker type determines capitalization and end punctuation. There are two systems, and **they must never be mixed within a single list**:
-
-**System 1: Uppercase start, period at end.**
-Used when items are marked with a number + period (1.) or uppercase letter + period (А.).
-Each item is treated as a separate sentence.
-
-```
-1. Каждый элемент начинается с заглавной буквы.
-2. В конце каждого элемента ставится точка.
-3. Это относится и к коротким пунктам.
-```
-
-**System 2: Lowercase start, semicolon between items, period at the end of the last item.**
-Used when items are marked with a number + parenthesis (1)), lowercase letter + parenthesis (а)), dash (—), or bullet marker.
-
-```
-Навыки бывают трёх типов:
-— автономные, не требующие внешних инструментов;
-— связанные с MCP-серверами;
-— комбинированные, сочетающие оба подхода.
-```
-
-### Simplified rules for Markdown bullet lists
-
-Since Markdown uses `- ` (dash) or `* ` (asterisk) as markers, apply these rules:
-
-**Items are complete sentences** → capital letter, period at end of each:
-
-```
+```markdown
 - Навык загружается автоматически.
-- Claude следует инструкциям из SKILL.md.
-- Результат сохраняется в выходной файл.
+- Codex следует инструкциям из `SKILL.md`.
 ```
 
-**Items are phrases or fragments** → lowercase, semicolon, period at the very end:
+### Fragments continuing a lead-in
 
-```
-Для создания навыка потребуется:
-- файл SKILL.md с YAML-шапкой;
-- описание сценариев использования;
-- примеры входных и выходных данных.
-```
+In formal or publication-style prose, start with lowercase and use semicolons, ending the last item
+with a period:
 
-**Items are single words or very short noun phrases** → lowercase, comma or semicolon, period at the very end:
-
-```
-Поддерживаемые форматы:
-- PDF,
-- DOCX,
-- PPTX,
-- XLSX.
+```markdown
+Для установки нужны:
+- архив навыка;
+- доступ к рабочей папке;
+- средство проверки YAML.
 ```
 
-### Common errors to avoid
+### Web documentation and UI
 
-| Error | Why it's wrong | How to fix |
-|-------|---------------|------------|
-| Uppercase items without periods | Incomplete System 1 | Add periods |
-| Lowercase items with periods | Hybrid system | Use semicolons, period only at end |
-| No punctuation at all | Missing standard | Choose a system and apply consistently |
-| Mixing complete sentences and noun phrases | Broken parallelism | Make all items the same type |
+Short labels, navigation items, feature lists, menus, checklists, cards, and UI strings may omit
+terminal punctuation. Preserve the product's established pattern:
 
-### Example from technical documentation
-
-Bad (no punctuation, mixed grammar):
-
-```
-Без навыков:
-- Пользователи подключают MCP, но не знают, что делать дальше
-- Каждый диалог начинается с нуля
+```markdown
+- Documentation
+- API reference
+- Examples
 ```
 
-Good (System 1 — complete sentences with periods):
+Do not mix sentences and fragments accidentally. Punctuation consistency does not require adding
+periods to interface labels.
 
-```
-Без навыков:
-- Пользователи подключают MCP, но не знают, что делать дальше.
-- Каждый диалог начинается с нуля.
-```
+### Numbered procedures
 
-Good (System 2 — fragments continuing the lead-in phrase):
+Use numbered items for sequential steps. Prefer complete commands with periods in prose
+documentation. Preserve concise no-period steps when that is the established UI or house style.
 
-```
-Без навыков:
-- пользователи подключают MCP, но не знают, что делать дальше;
-- каждый диалог начинается с нуля.
-```
+## Numbers, uncertainty, and units
 
-### Special cases
+Typography must not change numerical meaning.
 
-**Mixed list with an internal full sentence.** Even if a lowercase item contains a full sentence inside, the item still ends with semicolon (§ 166 of Полный академический справочник):
+- Preserve bounds: `more than 100` → «более 100», not «100».
+- Preserve approximation: `about five` → «около пяти», not «5».
+- Preserve limits: `at least 3` → «не менее 3»; `up to 10` → «до 10».
+- Use a comma as the decimal separator in Russian prose: `3,14`.
+- Separate thousands with non-breaking spaces where the output format permits: `1 000 000`.
+- Put a non-breaking space between a number and most units: `50 %`, `100 кг`, `25 °C`.
+- Use ordinal endings where needed: `1-й`, `2-я`, `5-го`.
 
-```
-Состав подписи зависит от типа иллюстрации:
-а) только порядковый номер. Так делается, когда содержание ясно из самой иллюстрации;
-б) сокращение «рис.» и порядковый номер;
-в) тема изображения без номера.
-```
-
-**"И т. д.", "и др.", "и т. п."** at the end of a list are not placed on a separate line — they stay at the end of the previous item:
-
-```
-- природные каменные;
-- керамические;
-- лесные материалы и др.
-```
-
-### What NOT to do
-
-- Do not mix systems: all items in one list must follow the same punctuation pattern.
-- Do not put a period after items that start with lowercase (except the very last item).
-- Do not leave items without any end punctuation — every item must have either a comma, semicolon, or period.
-- Do not use a period after every item in a lowercase list — that is the single most common error.
-
-### Numbered lists for procedures
-
-For step-by-step instructions (шаги 1–N), use numbered lists. Each step:
-- Either a complete sentence with a period;
-- Or a brief command without a period — but then ALL steps must be the same.
-
-If a step starts with an imperative verb ("Проверьте", "Сравните", "Откройте"), adding a period at the end makes the text cleaner and more readable on screen.
-
-### Checklists ([ ])
-
-If the document uses checklists with checkboxes:
-- Brief noun phrases without periods are acceptable;
-- But ALL items must be the same form (no mixing sentences and fragments);
-- If you want a "book-quality" standard, convert items to sentences with periods.
-
-## Colon Before a List
-
-Use a colon when the introductory phrase directly leads into the list ("включает:", "содержит:", "шаги:").
-
-If the list doesn't grammatically flow from the introduction, use a period and start the list as a separate block.
-
-## Numbers and Units
-
-- Thousands separator: non-breaking space (1 000 000, not 1,000,000)
-- Decimal separator: comma (3,14 not 3.14)
-- Space before units: 50 %, 100 кг, 25 °C
-- Currency after number with space: 100 $, 50 EUR, 1 000 руб.
-- Ordinal numbers: use Russian endings with hyphen — 1-й, 2-я, 3-е, 5-го
+Do not alter number formatting inside code, data, identifiers, commands, or locale-sensitive input.
 
 ## Dates
 
-Full format: 15 января 2025 года.
+Use `15 января 2026 года` or `15.01.2026` in Russian prose. Do not preserve an ambiguous numeric
+date blindly: resolve it from source locale or flag the ambiguity. Keep ISO dates where required by
+an API, file format, table schema, or user instruction.
 
-Short format: 15.01.2025.
+## Abbreviations and spaces
 
-Never use American format (01/15/2025).
-Never use slashes for Russian text.
+Use conventional forms such as `т. е.`, `т. д.`, `и др.`, `№ 5`, and `§ 3`. Apply non-breaking
+spaces only when the output format supports them and they will not break code, searchability, or
+downstream processing.
 
-Months are not capitalized in Russian: январь, февраль, март.
+## Mixed-language text
 
-## Abbreviations
+- Keep product names, identifiers, code, commands, paths, and official labels unchanged.
+- Use Russian punctuation around embedded English prose when the surrounding sentence is Russian.
+- Do not change capitalization that has functional or branding significance.
+- Never mix Cyrillic and Latin lookalike characters in one word or identifier.
 
-Common Russian abbreviations:
-- т. е. (то есть)
-- т. д. (так далее)
-- т. п. (тому подобное)
-- и др. (и другие)
-- и пр. (и прочее)
-- напр. (например)
-- см. (смотри)
-- ср. (сравни)
+## The letter «ё»
 
-Each part separated by a non-breaking space. Do not merge into "т.е." or "т.д."
-
-## Spaces
-
-- Non-breaking space between number and unit: 5 кг, 100 %
-- Non-breaking space between initials and surname: А. С. Пушкин
-- Non-breaking space after single-letter prepositions: в, с, к, о, у
-- No space before colon, semicolon, exclamation mark, question mark
-- Space after all punctuation marks except opening brackets and quotes
-
-## Commas in Set Phrases
-
-Machine translation often drops necessary Russian commas. Watch for:
-
-| Bad (missing comma) | Good |
-|---------------------|------|
-| при условии что | при условии, что |
-| несмотря на то что | несмотря на то, что |
-| в связи с тем что | в связи с тем, что |
-| для того чтобы | для того, чтобы |
-
-These are small details, but they are among the strongest signals of machine translation to a careful reader.
-
-## Special Characters
-
-- Use proper Russian letters, not Latin lookalikes (а, е, о, р, с, х in Russian vs a, e, o, p, c, x in English)
-- Ellipsis: three dots (...) with space before next word
-- Number sign with space: № 5, § 3
-
-## Heading Style in Web Documentation
-
-- Do not use «Глава» before section numbers in web documentation. It adds visual noise.
-- Use: «1. Основы», not «Глава 1. Основы».
-- Exception: if the document is explicitly styled as a book (with chapters, appendices), «Глава» may be appropriate.
-
-## The Letter «Ё»
-
-Use «ё» consistently throughout the text. This is the standard for professional publishing.
-
-| Bad | Good |
-|-----|------|
-| еще | ещё |
-| все (when meaning "всё") | всё |
-| ее (when meaning "её") | её |
-| прием | приём |
-| елочки | ёлочки |
+Use «ё» consistently as this skill's editorial house style: «ещё», «всё», «её», «приём». This is
+a deliberate policy for this skill, not a claim that every Russian publisher follows the same
+standard. Follow an explicit customer or publication style guide if it requires selective use of
+«ё».
