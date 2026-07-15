@@ -1,105 +1,92 @@
-# Glossary Strategy and Terminology Consistency
+# Terminology and Glossary Strategy
 
-## Why This Matters
+Use this reference for technical, long, repetitive, or multi-document translations.
 
-Inconsistent terminology is one of the strongest markers of machine translation. When the same concept is called "коннектор" in one paragraph, "интеграция" in the next, and "подключение" in the third — without explanation — the reader's trust drops immediately.
+## Decision order
 
-A human translator maintains a mental glossary. A machine translator picks whatever synonym scores highest at each occurrence. The fix is to build and maintain a glossary.
+Choose a term by checking, in order:
 
-## When to Build a Glossary
+1. the customer's approved glossary or translation memory;
+2. official Russian product documentation and localized UI;
+3. an established term in the target professional community;
+4. a clear Russian equivalent that preserves the distinction;
+5. the English term when no stable Russian equivalent exists.
 
-Build a glossary when translating:
-- Documents longer than 2 pages;
-- Documents with domain-specific terminology (IT, legal, medical, financial);
-- Series of related documents (a documentation set, a course, a product guide);
-- Texts where the same English term appears 5+ times.
+Once chosen for a concept, use the term consistently. Do not introduce synonyms merely to avoid
+repetition. A different translation is valid only when the English word denotes a different
+concept or the context changes its meaning.
 
-## How to Build the Glossary
+## Build a glossary when
 
-### Step 1: Extract key terms
+- the source is longer than two pages;
+- it belongs to a document series;
+- it uses domain-specific or product-specific terminology;
+- one ambiguous term appears at least five times;
+- several translators or translation sessions must remain consistent.
 
-Before translating, scan the source text for:
-- Repeated domain terms (skill, connector, workflow, trigger, workspace);
-- Terms with multiple possible translations;
-- Product-specific names and UI labels;
-- Abbreviations and acronyms.
+Record the English term, chosen Russian equivalent, context, protected form, and exceptions.
 
-### Step 2: Choose one Russian equivalent per term
+## Canonical software terms
 
-For each term, decide:
+These are defaults, not substitutes for an approved customer glossary.
 
-| English | Preferred Russian | Alternatives (do NOT use) | Notes |
-|---------|------------------|--------------------------|-------|
-| skill | навык | скилл, умение | «скилл» — разговорный англицизм |
-| connector | коннектор | подключение, интеграция | Если UI показывает "Connector", оставляем «коннектор» |
-| workflow | рабочий процесс | воркфлоу | В формальном тексте |
-| trigger | триггер | условие запуска | «триггер» устоялся в IT |
-| workspace | рабочее пространство | воркспейс | В продуктовых текстах Claude допустимо «проект» |
-| frontmatter | YAML-шапка | преамбула, заголовок | «Преамбула» — юридический термин |
-| deploy | развернуть | задеплоить | Формальный текст |
-| publish | опубликовать | выложить, зарелизить | |
-| distribution | публикация | распространение | В контексте навыков/плагинов |
+| English | Russian prose | Keep in English when | Notes |
+|---|---|---|---|
+| skill | навык | It is an identifier or official untranslated UI label. | Do not use «скилл» in neutral documentation. |
+| connector | коннектор | `Connector` is an official label. | Use «интеграция» only when the concept is genuinely broader than a connector. |
+| workflow | рабочий процесс | It is code, an identifier, or an official UI label. | In automation products, «сценарий» is acceptable only when that is the product's established concept. |
+| trigger | триггер / условие запуска | It is code, an event name, or an official UI label. | «Триггер» is established in technical prose; use «условие запуска» for a broader audience when accurate. |
+| workspace | рабочее пространство | It is an official UI label or identifier. | A product may use «проект» as a distinct concept; follow its glossary. |
+| description field | поле `description` / поле описания | `description` is the literal field name or identifier. | Preserve the code form when referring to YAML, JSON, or an API schema. |
+| version control | управление версиями | It is an official feature name or identifier. | Use «система контроля версий» when the source means a VCS such as Git. |
+| tool | инструмент | `tool` is an API value, type, field, or identifier. | `tool call` → «вызов инструмента» in prose. |
+| hook | хук | `hook` is code, an API value, or an identifier. | For a nontechnical audience, «обработчик» may be clearer if accurate. |
+| middleware | middleware | It is an API or framework term. | Use «промежуточный обработчик» or «промежуточный слой» only when it describes the architecture precisely. |
+| endpoint | API-эндпоинт | It is code or an official label. | «Конечная точка» is acceptable in a customer glossary but should not alternate with «эндпоинт». |
+| frontmatter | YAML-шапка | It is code or a field name. | In formal prose, «блок YAML-метаданных» may be preferable. Pick one form per document. |
+| progressive disclosure | постепенная подача / поэтапное раскрытие | It is an official design-pattern name. | Avoid «прогрессивное раскрытие» unless it is the approved product term. |
+| composability | сочетаемость / модульность | It is an official architecture term. | Choose by meaning: ability to combine components is «сочетаемость»; component design may be «модульность». |
+| distribution | публикация / размещение / доставка / развёртывание | It is an official feature name. | Translate by function; there is no universal equivalent. |
+| pipeline | CI/CD-пайплайн; конвейер обработки данных | It is code or an official label. | Do not alternate forms for one pipeline. |
+| conversation | диалог | It is code or an API field. | In an LLM context, avoid «разговор» unless the product itself uses it. |
+| session | сеанс / сессия | It is code or an API field. | Choose according to the product glossary and keep it stable. |
+| extraction schema | схема извлечения данных | It is an identifier or official schema name. | Do not force the hybrid «extraction-схема» without product evidence. |
+| severity | уровень критичности | It is the field or enum value `severity`. | Preserve enum members exactly. |
+| deploy | развернуть | It is a command or identifier. | Informal team chat may use «задеплоить» if that matches the source register. |
+| publish | опубликовать | It is a command or identifier. | Do not replace with «развернуть» unless deployment is meant. |
+| bundle | комплект / набор / пакет | It is code, an identifier, or an official product term. | Choose by what is bundled; do not default to «бандл» in neutral prose. |
+| reference file | справочный файл | It is an official label or identifier. | «Файл-пример» is different and should not replace it. |
+| asset | ресурс / материал | It is code, a directory name, or an official label. | In design and web projects, the approved term may be «ассет»; keep it only when the audience expects it. |
+| kebab-case | kebab-case | It is a formatting term. | Keep the established Latin form and explain it only when the audience needs a gloss. |
+| MCP server | MCP-сервер | `MCP server` is an identifier or official UI label. | Keep MCP in Latin script and translate the generic noun. |
 
-### Step 3: Apply consistently
+## Protected English forms
 
-- Use the chosen term every time the concept appears;
-- If you need to introduce a synonym for stylistic variety, do it explicitly: "коннекторы (также называемые интеграциями)";
-- After the first explicit introduction, use only the primary term.
+Keep product and organization names, standard abbreviations, formats, code, identifiers, and
+unlocalized UI labels in their official form: Codex, Claude, MCP, Docker, GitHub, API, SDK, CLI,
+JSON, YAML, HTTP, `SKILL.md`, `severity`, and `pip install`.
 
-## Mixed-Language Decisions
+Translate surrounding generic words naturally: «MCP-сервер», «API-клиент», «JSON-файл».
+Never replace Latin characters inside an identifier with Cyrillic lookalikes.
 
-For each term, decide which of these categories it falls into:
+## Resolve drift
 
-### Category A: Always in English (Latin script)
-- Product names: Claude, MCP, Docker, GitHub, VS Code
-- Technical identifiers: API, SDK, CLI, JSON, YAML, HTTP
-- Code elements: `SKILL.md`, `scripts/`, `pip install`
-- UI labels when the product has no Russian localization
+When a chosen translation proves inaccurate:
 
-### Category B: Always in Russian
-- Generic concepts with good Russian equivalents: навык, задача, рабочий процесс, публикация, развёртывание
-- Actions: настроить, запустить, проверить, обновить
+1. update the glossary decision;
+2. replace every instance that denotes the same concept;
+3. verify that code and official labels were not altered;
+4. re-read affected sentences for grammar and meaning;
+5. record the context-dependent exception instead of creating unexplained variation.
 
-### Category C: English on first mention, Russian thereafter
-- Terms that need introduction: "Frontmatter (YAML-шапка) — это блок метаданных..." → далее только «YAML-шапка»
+## Do not confuse consistency with uniform substitution
 
-### Category D: English term in Latin + Russian gloss
-- UI menu paths: Settings (Настройки) > Extensions (Расширения) > Claude
-- Official document titles: «Skills API Quickstart (краткое руководство по API навыков)»
+One English word may have different meanings. Translate by concept:
 
-## Glossary Template for Common Skill/Claude Documentation
+- `issue`: «задача» in a tracker, «замечание» in an audit, «проблема» in general prose;
+- `process`: «обрабатывать» as a verb, «процесс» as a noun;
+- `handle`: «обрабатывать» requests, «поддерживать» formats, «дескриптор» as a programming noun;
+- `implement`: «реализовать» a function, «внедрить» a solution;
+- `control`: «управлять» a system, «контролировать» compliance, «элемент управления» in a UI.
 
-| English | Russian | Category | Notes |
-|---------|---------|----------|-------|
-| skill | навык | B | |
-| SKILL.md | `SKILL.md` | A | Always code-formatted |
-| frontmatter | YAML-шапка | C | Introduce on first use |
-| description field | поле описания | B | |
-| trigger | триггер | B | Established in IT |
-| workspace | рабочее пространство | B | |
-| MCP server | MCP-сервер | A+B hybrid | MCP stays Latin, «сервер» in Cyrillic |
-| connector | коннектор | B | |
-| tool | инструмент | B | In Claude context |
-| progressive disclosure | постепенная подача | C | Introduce with English on first use |
-| composability | сочетаемость | B | |
-| distribution | публикация | B | In context of publishing skills |
-| deploy | развернуть | B | |
-| bundle | комплект / набор | B | |
-| workflow | рабочий процесс | B | |
-| reference file | справочный файл | B | |
-| asset | ресурс | B | |
-| kebab-case | kebab-case | A | Technical formatting term |
-
-## Handling Terminology Drift
-
-If during translation you realize a term needs a different translation than initially chosen:
-1. Go back and update ALL previous instances;
-2. Do not leave mixed terminology "for later" — it is the #1 source of quality regression;
-3. If the document is too long to re-scan manually, use find-and-replace after completing the draft.
-
-## What NOT to Do
-
-- Do not alternate synonyms for the same technical term "for variety" — terminology consistency trumps stylistic variation;
-- Do not transliterate when a Russian equivalent exists: «скилл» → «навык», «воркфлоу» → «рабочий процесс»;
-- Do not translate established English terms that have no good Russian equivalent: API, Docker, JSON, MCP;
-- Do not mix Latin and Cyrillic scripts within a single word: «MCP-сервер» (correct), «МСР-сервер» (wrong).
+Consistency applies to the same concept, not to the same English spelling in every context.
